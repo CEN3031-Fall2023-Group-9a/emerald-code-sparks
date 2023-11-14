@@ -2,6 +2,8 @@ import React from "react"
 import NavBar from "../../components/NavBar/NavBar"
 import "./HowItWorks.less"
 
+/* How It Works - Static Page */
+
 export default function HowItWorks(props) {
   return (
     <div className="container nav-padding">

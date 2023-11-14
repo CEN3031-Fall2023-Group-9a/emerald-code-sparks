@@ -2,6 +2,7 @@ import React from "react"
 import NavBar from "../../components/NavBar/NavBar"
 import "./OurTeam.less"
 
+/* Our Team - Static Page */
 export default function OurTeam(props) {
   return (
     <div className="container nav-padding">

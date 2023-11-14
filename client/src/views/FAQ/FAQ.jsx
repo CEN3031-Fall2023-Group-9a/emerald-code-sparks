@@ -3,6 +3,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import NavBar from "../../components/NavBar/NavBar"
 import "./FAQ.less"
 
+/* FAQ - Static Page with Accordion Component */
 
 export default function FAQ(props) {
   return (
