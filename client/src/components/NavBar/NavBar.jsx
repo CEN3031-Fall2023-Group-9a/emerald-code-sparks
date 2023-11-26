@@ -40,10 +40,8 @@ export default function NavBar() {
 
   return (
     <div id='navBar' className='top-nav'>
-      {/* Wrap the img tag with a Link tag */}
-      <Link to="/">
-        <img src={Logo} id='logo' alt='logo' />
-      </Link>
+    {/* Directly attach an onClick event handler to the image */}
+    <img src={Logo} id='logo' alt='logo' onClick={() => handleRouteChange(routes.Home)} />
 
       {/* the navbar will show paths based on the user's role */}
       {shouldShowRoute('Home') ? (
