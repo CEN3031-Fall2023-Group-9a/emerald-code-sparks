@@ -7,7 +7,7 @@ import { BarsOutlined } from '@ant-design/icons';
 import { removeUserSession } from '../../Utils/AuthRequests';
 import { useGlobalState } from '../../Utils/userState';
 import { Link } from 'react-router-dom';
-
+import Settings from '../Settings/Settings';
 
 
 export default function NavBar() {
