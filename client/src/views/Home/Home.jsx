@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Logo from "../../assets/casmm_logo11_duck.png";
 import NavBar from "../../components/NavBar/NavBar";
 import TeacherLogin from '../TeacherLogin/TeacherLogin';
 import './Home.less';
 import HomeJoin from "../StudentLogin/HomeJoin";
 
-const Home = () => (
+const Home = () => {
+
+    return (
     <div className='container nav-padding'>
         <NavBar />
 
@@ -45,6 +47,7 @@ const Home = () => (
             </div>
         </div>
     </div>
-)
+    )
+};
 
 export default Home;

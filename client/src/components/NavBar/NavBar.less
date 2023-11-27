@@ -97,6 +97,10 @@
   display: block;
 }
 
+.settings {
+  float: right;
+}
+
 //when screen is tablet size or less
 @media screen and (max-width: 768px) {
   .top-nav p, .dropdown .drop-btn {
@@ -115,6 +119,10 @@
 @media screen and (max-width: 768px) {
   .top-nav.responsive #logo {
     display: none;
+  }
+
+  .top-nav.responsive .settings {
+    float: left;
   }
   
   .top-nav.responsive {
