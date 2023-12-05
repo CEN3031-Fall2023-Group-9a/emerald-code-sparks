@@ -4,8 +4,9 @@ import TAMU from "../../assets/tamu_logo.png"
 import UF from "../../assets/uf_logo.png"
 import NavBar from "../../components/NavBar/NavBar"
 import "./About.less"
+import PropTypes from 'prop-types';
 
-export default function About(props) {
+function About(props) {
 
   return (
         // change between light and dark css/less depending on state
@@ -32,3 +33,9 @@ export default function About(props) {
       </div>
   )
 }
+
+About.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default About;

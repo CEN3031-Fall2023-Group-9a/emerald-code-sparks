@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import NavBar from "../../components/NavBar/NavBar"
-//import DarkNavBar from "../../components/NavBar/DarkNavBar";
 import "./HowItWorks.less"
+import PropTypes from 'prop-types';
 
-export default function HowItWorks(props) {
+function HowItWorks(props) {
 
   return (
         // change between light and dark css/less depending on state
@@ -25,3 +25,9 @@ export default function HowItWorks(props) {
     </div>
   )
 }
+
+HowItWorks.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default HowItWorks

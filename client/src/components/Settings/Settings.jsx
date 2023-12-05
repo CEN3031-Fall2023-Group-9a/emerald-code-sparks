@@ -1,22 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import { SettingOutlined } from '@ant-design/icons';
 import "./Settings.less"
+import PropTypes from 'prop-types';
 
 
-export default function Settings(props) {
+function Settings(props) {
   //google translate
-  const googleTranslateElementInit = () => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: "en",
-        autoDisplay: false
-      },
-      "google_translate_element"
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
     );
-  };
+}
   
   useEffect(() => {
-    var addScript = document.createElement("script");
+    let addScript = document.createElement("script");
     addScript.setAttribute(
       "src",
       "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -30,10 +28,10 @@ export default function Settings(props) {
       props.setDarkMode(!props.isDarkMode);
     };
 
-  const [dropdownOpen, setDropdownStatus] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setDropdownStatus(!dropdownOpen);
+    setDropdownOpen(!dropdownOpen);
   };
 
   return (
@@ -51,4 +49,9 @@ export default function Settings(props) {
   );
 }
 
+Settings.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
+  setDarkMode: PropTypes.func.isRequired
+};
 
+export default Settings;

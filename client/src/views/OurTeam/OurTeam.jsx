@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from "../../components/NavBar/NavBar"
-//import DarkNavBar from "../../components/NavBar/DarkNavBar";
-
+import PropTypes from 'prop-types';
 import "./OurTeam.less"
 
-export default function OurTeam(props) {
+function OurTeam(props) {
 
   return (
         // change between light and dark css/less depending on state
@@ -56,3 +55,9 @@ export default function OurTeam(props) {
     </div>
   )
 }
+
+OurTeam.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default OurTeam;

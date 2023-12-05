@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import BlocklyCanvasPanel from "../../components/ActivityPanels/BlocklyCanvasPanel/BlocklyCanvasPanel"
 import NavBar from "../../components/NavBar/NavBar"
-//import DarkNavBar from "../../components/NavBar/DarkNavBar";
+import PropTypes from 'prop-types';
 
 import {
   getAuthorizedWorkspaceToolbox,
@@ -12,7 +12,7 @@ import {
 } from "../../Utils/requests"
 import { useGlobalState } from "../../Utils/userState"
 
-export default function BlocklyPage({ isSandbox, isDarkMode }) {
+function BlocklyPage({ isSandbox, isDarkMode }) {
   const [value] = useGlobalState("currUser")
   const [activity, setActivity] = useState({})
   const navigate = useNavigate()
@@ -84,3 +84,10 @@ return (
     </div>
   )
 }
+
+BlocklyPage.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+
+export default BlocklyPage;

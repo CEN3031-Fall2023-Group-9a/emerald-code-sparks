@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from '../../components/Accordion/Accordion';
 import NavBar from "../../components/NavBar/NavBar";
-
-
 import "./FAQ.less"
+import PropTypes from 'prop-types';
 
-
-export default function FAQ(props) {
+function FAQ(props) {
 
   return (
         // change between light and dark css/less depending on state
@@ -30,3 +28,9 @@ export default function FAQ(props) {
    </div>
   )
 }
+
+FAQ.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default FAQ;

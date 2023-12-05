@@ -7,6 +7,7 @@ import FilterComponent from './FilterComponent';
 //testing GalleryItems
 import { getGalleryObjects } from '../../Utils/requests';
 import "./Gallery.less"
+import PropTypes from 'prop-types';
 
 
 const Gallery = (props) => {
@@ -82,6 +83,10 @@ const Gallery = (props) => {
             </div>
         </>
     );
+}
+
+Gallery.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Gallery;
