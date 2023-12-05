@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import Logo from "../../assets/code-sparks_logo11_duck.png";
 import NavBar from "../../components/NavBar/NavBar";
 import TeacherLogin from '../TeacherLogin/TeacherLogin';
+import PropTypes from 'prop-types';
 
 import './Home.less';
 import HomeJoin from "../StudentLogin/HomeJoin";
@@ -55,6 +56,10 @@ return (
         </div>
     </div>
 )}
+
+Home.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired
+};
 
 
 export default Home;

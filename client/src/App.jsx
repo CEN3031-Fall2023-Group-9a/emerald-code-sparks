@@ -35,7 +35,7 @@ const App = () => {
   const navigate = useNavigate();
   const [isInitial, setIsInitial] = useState(true);
   const currentUser = getCurrUser();
-  const [isDarkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const handleSessionTimeout = () => {
     if(currentUser !== 'DefaultUser'){
       handleLogout(navigate);//use existing logout function
@@ -87,12 +87,12 @@ const App = () => {
   useEffect(() => {
     // Check the device's system preferences
     const defaultMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(defaultMode);
+    setIsDarkMode(defaultMode);
 
     // Listen for changes in mode preference
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (event) => {
-        setDarkMode(event.matches);
+        setIsDarkMode(event.matches);
     }
 
     mediaQuery.addEventListener("change", () => {
@@ -209,7 +209,7 @@ const App = () => {
       </Routes>
 
     <div className='settings'>
-      <Settings isDarkMode={isDarkMode} setDarkMode={setDarkMode}/>
+      <Settings isDarkMode={isDarkMode} setDarkMode={setIsDarkMode}/>
     </div>
 
     </div>

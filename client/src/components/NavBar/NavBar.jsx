@@ -6,9 +6,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BarsOutlined } from '@ant-design/icons';
 import { removeUserSession } from '../../Utils/AuthRequests';
 import { useGlobalState } from '../../Utils/userState';
+import PropTypes from 'prop-types';
 
 
-export default function NavBar(props) {
+function NavBar(props) {
 
   const [value] = useGlobalState('currUser');
   let navigate = useNavigate();
@@ -154,3 +155,8 @@ export default function NavBar(props) {
   );
 }
 
+NavBar.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+};
+
+export default NavBar;
