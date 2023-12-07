@@ -2,13 +2,42 @@
 
 > Computation and Science Modeling through Making
 
-Cloud-based programming interface
+## Project Details
+Our project was about developing the site we pulled from the [main repository](https://github.com/UFWebApps2-0/emerald-code-sparks) to look better and work better for users. As such, we had the following objectives:
+- Create a Style to apply to the entire website
+- Design a brand logo for the site
+- Make the landing page for easy navigation
+- Create several static pages for all user of the site (about, help, FAQs)
+- Implement good site navigation features
+  - State tracking for saving work and returning to the last page they were on
+  - Create a sense of flow between pages
+- Accommodate for different user needs
+  - Font type, size, color, and contrast
+  - Make code Screen reader friendly
+  - Allow for language translations
+  - Develop changes for sandbox so users with low vision or motor skills can use it
+    - Also should be usable for people who don’t speak English as their native language
 
+<<<<<<< Updated upstream
 ![Deploy Staging](https://github.com/STEM-C/Code Sparks/workflows/Deploy%20Staging/badge.svg)
 ![Deploy Production](https://github.com/STEM-C/Code Sparks/workflows/Deploy%20Production/badge.svg)
+=======
+### Achieved Features
+- Of the above tasks, we completed the following features that you can see by running the website within `/client`:
+- Website style changes
+  - Change from CASMM to Code Sparks
+  - Rework the logo for the website
+  - Change the favicon for the site
+- Quality of Life
+  - Add session and local storage timeouts
+  - Make buttons and links more interactive
+  - Make keyboard navigation act like :hover does
+  - Add a website theme that reflects the system settings
+  - Change how elements scale with window size
+  - Implement Google Translate
+>>>>>>> Stashed changes
 
 <br/>
-
 ## Application
 
 ### `client` 
@@ -61,6 +90,7 @@ The development environment is composed of five servers. The first one is run wi
    > Grant permission to the **scripts** and **server** directories if you are prompted
    
 
+<<<<<<< Updated upstream
 ### Staging
 
 #### Structure
@@ -109,6 +139,8 @@ All of the deployments and releases are handled automatically with [GitHub Actio
 
 ## Contributing
 
+=======
+>>>>>>> Stashed changes
 ### Git Flow 
 
 > We will follow this git flow for the most part — instead of individual release branches, we will have one to streamline staging deployment 
