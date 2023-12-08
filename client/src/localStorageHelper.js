@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { removeUserSession } from './Utils/AuthRequests';
 export const getHistory = (key) => {
     try{
