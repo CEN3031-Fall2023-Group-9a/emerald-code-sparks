@@ -140,3 +140,43 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 - PRs to **master** should squash and merge
 - PRs to all other branches should create a merge commit
+
+### Features
+
+We developed 7 features for this project:
+
+> Google Translate:
+- Description: This feature allows the user to change the language of the webpage to any of the 100+ languages that google translate offers. As the user navigates through the website, the chosen language stays the same. 
+
+
+
+
+> Navbar:
+- Description: This feature allows users to easily navigate between pages in the website. It is also responsive since it is able to accommodate smaller screen sizes.
+
+
+
+> Landing Page
+- Description: This feature is the first thing that users will see as they arrive at the website. It accommodates all types of users and allows for them to directly sign in on the screen. It also has featured projects at the bottom of the screen. 
+
+
+
+
+> State tracking - public sandbox: 
+- Description: For non-logged-in users, a public sandbox is available to experiment with. The state tracking system preserves their progress for 24 hours of inactivity. This allows users to return to their work if they revisit the site within this time frame.
+
+
+
+
+> State tracking - session storage:
+- Description: The website remembers the last page visited by a user. If a user accidentally closes the website, they are redirected back to their previous page upon reopening. For logged-in users, this redirection leads to the login page. Additionally, there is a 15-minute idle timeout. If non-logged-in users remain inactive for this period, they are redirected to the main page. Meanwhile, logged-in users are automatically signed out and taken to the login page after 15 minutes of inactivity.
+
+
+
+
+> System Mode: 
+- Description: Detects whether a user’s device is in light-mode or dark-mode and displays color themes on CodeSparks according to those settings. Feature includes a button that allows users to manually toggle between modes and set the website to their chosen theme.
+  
+> UI Feedback: 
+- Description: Gives user interactive UI elements. UI elements such as buttons and logos provide visual feedback when hovered over with the mouse. This includes button text highlight and color change, as well as logo enlargement and home page rerouting.
+
