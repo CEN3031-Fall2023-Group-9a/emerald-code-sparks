@@ -153,32 +153,38 @@ We developed 7 features for this project:
 
 > Navbar:
 - Description: This feature allows users to easily navigate between pages in the website. It is also responsive since it is able to accommodate smaller screen sizes.
-
+![Navbar](/../screenshots/2.png?raw=true)
 
 
 > Landing Page
 - Description: This feature is the first thing that users will see as they arrive at the website. It accommodates all types of users and allows for them to directly sign in on the screen. It also has featured projects at the bottom of the screen. 
-
+![Landing Page](/../screenshots/3.png?raw=true)
 
 
 
 > State tracking - public sandbox: 
 - Description: For non-logged-in users, a public sandbox is available to experiment with. The state tracking system preserves their progress for 24 hours of inactivity. This allows users to return to their work if they revisit the site within this time frame.
-
+![public sandbox](/../screenshots/4-1.png?raw=true)
+![clean public sandbox](/../screenshots/4-2.png?raw=true)
 
 
 
 > State tracking - session storage:
 - Description: The website remembers the last page visited by a user. If a user accidentally closes the website, they are redirected back to their previous page upon reopening. For logged-in users, this redirection leads to the login page. Additionally, there is a 15-minute idle timeout. If non-logged-in users remain inactive for this period, they are redirected to the main page. Meanwhile, logged-in users are automatically signed out and taken to the login page after 15 minutes of inactivity.
-
+![about page](/../screenshots/5-1.png?raw=true)
+![login page](/../screenshots/5-2.png?raw=true)
 
 
 
 > System Mode: 
 - Description: Detects whether a user’s device is in light-mode or dark-mode and displays color themes on CodeSparks according to those settings. Feature includes a button that allows users to manually toggle between modes and set the website to their chosen theme.
+![light mode](/../screenshots/6-1.png?raw=true)
+![dark mode](/../screenshots/6-2.png?raw=true)
   
 > UI Feedback: 
 - Description: Gives user interactive UI elements. UI elements such as buttons and logos provide visual feedback when hovered over with the mouse. This includes button text highlight and color change, as well as logo enlargement and home page rerouting.
+![hover-forgot password](/../screenshots/7-1.png?raw=true)
+![hover-home](/../screenshots/7-2.png?raw=true)
 
 Screenshots and detailed explaination can be found in Section 4 in Google Doc: https://docs.google.com/document/d/1DG8vTeg0VlEZ-Cz1d0RzF5MpPSqR_hHYevqbpcYgFzM/edit?usp=sharing 
 
