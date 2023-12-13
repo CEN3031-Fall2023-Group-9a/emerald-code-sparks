@@ -180,7 +180,7 @@ We developed 7 features for this project:
 > UI Feedback: 
 - Description: Gives user interactive UI elements. UI elements such as buttons and logos provide visual feedback when hovered over with the mouse. This includes button text highlight and color change, as well as logo enlargement and home page rerouting.
 
-Screenshots and detailed explaination can be found in Google Doc: https://docs.google.com/document/d/1DG8vTeg0VlEZ-Cz1d0RzF5MpPSqR_hHYevqbpcYgFzM/edit?usp=sharing 
+Screenshots and detailed explaination can be found in Section 4 in Google Doc: https://docs.google.com/document/d/1DG8vTeg0VlEZ-Cz1d0RzF5MpPSqR_hHYevqbpcYgFzM/edit?usp=sharing 
 
 
 ### Databases
