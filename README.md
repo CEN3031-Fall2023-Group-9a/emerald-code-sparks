@@ -186,6 +186,11 @@ We developed 7 features for this project:
 ![hover-forgot password](/../screenshots/7-1.png?raw=true)
 ![hover-home](/../screenshots/7-2.png?raw=true)
 
+### CodeBase
+This project iterated on the existing repository “Emerald Code Sparks” (link: https://github.com/UFWebApps2-0/emerald-code-sparks) to add features to the CASMM website (https://www.casmm.org/). The package manager for this project was Node.JS Version 10.2.0 and we used REACT Version 18.2.0 to add more features to the website’s navigation and accessibility. We used Docker Version 4.25.2 and Yarn Version 1.22.19.
+
+### External Libraries & APIs
+- Google Translate API: https://www.coderepublics.com/howto/how-to-google-translate.php 
 
 ### Databases
 
