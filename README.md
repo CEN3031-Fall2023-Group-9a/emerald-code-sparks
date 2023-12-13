@@ -147,7 +147,7 @@ We developed 7 features for this project:
 
 > Google Translate:
 - Description: This feature allows the user to change the language of the webpage to any of the 100+ languages that google translate offers. As the user navigates through the website, the chosen language stays the same. 
-![Google Translate](/../<screenshots>/1.png?raw=true)
+![Google Translate](/../screenshots/1.png?raw=true)
 
 
 
