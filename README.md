@@ -186,8 +186,6 @@ We developed 7 features for this project:
 ![hover-forgot password](/../screenshots/7-1.png?raw=true)
 ![hover-home](/../screenshots/7-2.png?raw=true)
 
-Screenshots and detailed explaination can be found in Section 4 in Google Doc: https://docs.google.com/document/d/1DG8vTeg0VlEZ-Cz1d0RzF5MpPSqR_hHYevqbpcYgFzM/edit?usp=sharing 
-
 
 ### Databases
 
