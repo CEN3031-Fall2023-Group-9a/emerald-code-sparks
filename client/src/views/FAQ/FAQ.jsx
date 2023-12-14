@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 function FAQ(props) {
 
   return (
-    
+
         // change between light and dark css/less depending on state
     <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
-	  <NavBar isDarkMode ={props.isDarkMode}/>
+	<NavBar isDarkMode ={props.isDarkMode}/>
 
     <div>
       <div className={props.isDarkMode ? "accordion faq-dark" : "accordion"}>

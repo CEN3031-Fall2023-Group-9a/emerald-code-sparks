@@ -9,7 +9,6 @@ function HowItWorks(props) {
         // change between light and dark css/less depending on state
    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
      <NavBar isDarkMode ={props.isDarkMode}/>
-     
 
       <div className={props.isDarkMode ? "about-content-container about-dark" : "about-content-container"}>
         <h1 id="title" tabIndex="0">How It Works</h1>
