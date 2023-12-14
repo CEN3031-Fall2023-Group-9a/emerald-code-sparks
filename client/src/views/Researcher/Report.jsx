@@ -16,7 +16,7 @@ export default function Report(props) {
           <div class='child inline-block-child'>Home</div>
           <div class='child inline-block-child'>Reports</div>
         </div> */}
-        <Link to={'/activityLevel'}>
+        <Link to={'/activityLevel'} tabIndex="-1">
           <button
             id={'route-button'}
             className={`btn-${'primary'} btn-${'sm'}`}
@@ -25,7 +25,7 @@ export default function Report(props) {
             Activity Level Report
           </button>
         </Link>
-        <Link to={'/group-report'}>
+        <Link to={'/group-report'} tabIndex="-1">
           <button
             id={'route-button'}
             className={`btn-${'primary'} btn-${'sm'}`}

@@ -10,7 +10,7 @@ const NotFound = () => {
         <a href='https://www.google.com/chrome/' style={{ color: 'orange' }}>
           Chrome
         </a>{' '}
-        browser to run CaSMM
+        browser to run Code Sparks
       </h1>
     </div>
   );

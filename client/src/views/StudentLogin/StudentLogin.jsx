@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './StudentLogin.less';
-import Logo from '../../assets/casmm_logo.png';
+import Logo from '../../assets/code-sparks_logo.png';
 import { getStudents, postJoin } from '../../Utils/requests';
 import StudentLoginForm from './StudentLoginForm';
 import { setUserSession } from '../../Utils/AuthRequests';
 import { message } from 'antd';
 import NavBar from '../../components/NavBar/NavBar';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-export default function StudentLogin() {
+function StudentLogin(props) {
   const [studentList, setStudentList] = useState([]);
   const [animalList, setAnimalList] = useState([]);
   const [studentIds, setStudentIds] = useState([null, null, null]);
@@ -84,7 +85,7 @@ export default function StudentLogin() {
         );
       } else if (fails.includes(true)) {
         message.error(
-          `Student Name and Animal do not match. Remaining attemps (${attemp})`
+          `Student Name and Animal do not match. Remaining attempts (${attemp})`
         );
       }
     }
@@ -147,12 +148,12 @@ export default function StudentLogin() {
   };
 
   return (
-    <div className='container nav-padding'>
-      <NavBar />
+    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
+    <NavBar isDarkMode ={props.isDarkMode}/>
       <img src={Logo} alt='logo' id='login-logo' />
-      <div id='form-container'>
+      <div id={props.isDarkMode ? 'form-container-dark' : 'form-container'}>
         {setForms().map((form) => form)}
-        <div id='link-container'>
+        <div id={props.isDarkMode ? 'link-container-dark' : 'link-container'}>
           <button id='link-button' onClick={addStudent}>
             Add a student
           </button>
@@ -168,3 +169,9 @@ export default function StudentLogin() {
     </div>
   );
 }
+
+StudentLogin.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default StudentLogin;

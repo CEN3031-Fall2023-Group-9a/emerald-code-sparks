@@ -1,13 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+@primary: #59ABDF;
+@secondary: #A3CA67;
+@tertiary: #F4F4F5;
+@quaternary: #F3D250;
+@quinary: #FF570C; 
+@senary: #E9E9E9;
+@other: #DF59AB;
+@text-primary: #000000;
+@text-secondary: #FFFFFF;
+
+// colors for dark mode version
+@primary-dark: #0A2463;
+@secondary-dark: #c6c6c6;
+@tertiary-dark: #247BA0;
+@quaternary-dark: #ad8c06;
+@quinary-dark: #B43E8F; 
+@senary-dark: #E9E9E9;
+@other-dark: #e25eee;
+@text-primary-dark: #ffffff;
+@text-secondary-dark: #000000;
+
 
 #colors() {
-    primary: #3D5C82;
-    secondary: #5BABDE;
-    tertiary: #F4F4F5;
-    quaternary: #F3D250;
-    quinary:#F1C307; 
-    senary: #E9E9E9;
-    text-primary: #414141;
-    text-secondary: #FFFFFF;
+  primary: @primary;
+  secondary: @secondary;
+  tertiary: @tertiary;
+  quaternary: @quaternary;
+  quinary: @quinary; 
+  senary: @senary;
+  other: @other;
+  text-primary: @text-primary;
+  text-secondary: @text-secondary;
+
+  primary-dark: @primary-dark;
+  secondary-dark: @secondary-dark;
+  tertiary-dark: @tertiary-dark;
+  quaternary-dark: @quaternary-dark;
+  quinary-dark: @quinary-dark; 
+  senary-dark: @senary-dark;
+  other-dark: @other-dark;
+  text-primary-dark: @text-primary-dark;
+  text-secondary-dark: @text-secondary-dark;
+
 }
 
 .flex {
@@ -77,3 +112,14 @@
 .bold {
     font-weight: bold;
 }
+
+.container-dark::-webkit-scrollbar {
+    display: none;
+}
+
+.card-dark {
+    background-color: #colors[tertiary-dark];
+    padding: .7em;
+}
+
+

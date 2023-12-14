@@ -3,11 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import { getStudentClassroom } from '../../Utils/requests';
+import PropTypes from 'prop-types';
+
 import './Student.less';
 
-function Student() {
+function Student(props) {
   const [learningStandard, setLessonModule] = useState({});
   const navigate = useNavigate();
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const elementToFocus = document.getElementById('activity-container');
+
+    if(elementToFocus){
+      elementToFocus.focus();
+    }
+  })
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,11 +43,11 @@ function Student() {
   };
 
   return (
-    <div className='container nav-padding'>
-      <NavBar />
-      <div id='activity-container'>
-        <div id='header'>
-          <div>Select your Activity</div>
+    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
+    <NavBar isDarkMode ={props.isDarkMode}/>
+      <div id='activity-container' tabIndex="0" >
+        <div id='header' tabindex="-1">
+          <div tabindex="-1">Select your Activity</div>
         </div>
         <ul>
           {learningStandard.activities ? (
@@ -48,6 +58,7 @@ function Student() {
                   key={activity.id}
                   id='list-item-wrapper'
                   onClick={() => handleSelection(activity)}
+                  tabIndex="0"
                 >
                   <li>{`${learningStandard.name}: Activity ${activity.number}`}</li>
                 </div>
@@ -64,6 +75,10 @@ function Student() {
       </div>
     </div>
   );
+}
+
+Student.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Student;

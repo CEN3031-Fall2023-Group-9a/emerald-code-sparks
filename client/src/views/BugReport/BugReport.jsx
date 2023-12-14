@@ -3,9 +3,10 @@ import { Form, Input, Button, message } from 'antd';
 import { submitBugReport } from '../../Utils/requests';
 import NavBar from '../../components/NavBar/NavBar';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import "./BugReport.less";
 
-const BugReport = () => {
+const BugReport = (props) => {
   const [description, setDescription] = useState('');
   const [steps, setSteps] = useState('');
   const [name, setName] = useState('');
@@ -34,11 +35,11 @@ const BugReport = () => {
   };
 
   return (
-    <div className='container nav-padding'>
-      <NavBar />
+    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
+    <NavBar isDarkMode ={props.isDarkMode}/>
       <div id='bug-report-wrapper' style={{ marginTop: '0px' }}>
         <div id='bug-report-title'>Report a Bug</div>
-        <Form id='bug-report-form' onFinish={handleSubmit}>
+        <Form id={props.isDarkMode ? 'bug-report-form-dark' : 'bug-report-form'} onFinish={handleSubmit}>
           <Form.Item id='form-label' label='Contact name'>
             <Input
               onChange={(e) => setName(e.target.value)}
@@ -88,4 +89,9 @@ const BugReport = () => {
   );
 };
 
+BugReport.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
 export default BugReport;
+

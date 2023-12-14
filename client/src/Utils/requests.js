@@ -672,3 +672,29 @@ export const getClassroomWorkspace = async (id) =>
     auth: true,
     error: 'Unable to retrive classroom workspaces',
   });
+
+export const postGalleryObject = async (data) =>
+  makeRequest({
+    method: POST,
+    path: `${server}/gallery-posts`,
+    auth: false,
+    data: {
+      Title: data.Title,
+      User_name: data.User_name,
+      like_count: data.like_count,
+      view_count: data.view_count,
+      discussion_board: data.discussion_board,
+      visibility: data.visibility,
+      type: data.type,
+      object_id: 0,
+    },
+    error: 'Unable to post to gallery',
+  });
+
+export const getGalleryObjects = async () =>
+  makeRequest({
+    method: GET,
+    path: `${server}/gallery-posts`,
+    auth: false,
+    error: 'Unable to retrive gallery objects',
+  });

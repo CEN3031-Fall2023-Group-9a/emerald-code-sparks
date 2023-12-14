@@ -13,6 +13,8 @@ const ArduinoLogo = ({ setHoverCompile, handleCompile }) => {
         preserveAspectRatio='xMidYMid'
         onMouseEnter={() => setHoverCompile(true)}
         onMouseLeave={() => setHoverCompile(false)}
+        onFocus={() => setHoverCompile(true)}
+        onBlur={() => setHoverCompile(false)}
         className='hvr-info'
         onClick={handleCompile}
       >

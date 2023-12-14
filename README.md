@@ -1,11 +1,11 @@
-# CaSMM
+# Code Sparks
 
 > Computation and Science Modeling through Making
 
 Cloud-based programming interface
 
-![Deploy Staging](https://github.com/STEM-C/CaSMM/workflows/Deploy%20Staging/badge.svg)
-![Deploy Production](https://github.com/STEM-C/CaSMM/workflows/Deploy%20Production/badge.svg)
+![Deploy Staging](https://github.com/STEM-C/Code Sparks/workflows/Deploy%20Staging/badge.svg)
+![Deploy Production](https://github.com/STEM-C/Code Sparks/workflows/Deploy%20Production/badge.svg)
 
 <br/>
 
@@ -33,26 +33,26 @@ Cloud-based programming interface
 
 The development environment is composed of five servers. The first one is run with the [Create React App](https://create-react-app.dev/docs/getting-started/) dev server. The later four are containerized with docker and run with [docker compose](https://docs.docker.com/compose/).
 
-* `casmm-client-dev` - localhost:3000
+* `code-sparks-client-dev` - localhost:3000
 
-* `casmm-server-dev` - localhost:1337/admin
+* `code-sparks-server-dev` - localhost:1337/admin
 
-* `casmm-compile-dev` 
+* `code-sparks-compile-dev` 
 
-* `casmm-db-dev` - localhost:5432
+* `code-sparks-db-dev` - localhost:5432
 
-  > The first time the db is started, the [init_db.sh](/scripts/init_db.sh) script will run and seed the database with an environment specific dump. Read about Postgres initialization scripts [here](https://github.com/docker-library/docs/blob/master/postgres/README.md#initialization-scripts). To see how to create this dump, look [here](https://github.com/DavidMagda/CaSMM_fork_2023/blob/develop/scripts/readme.md).
+  > The first time the db is started, the [init_db.sh](/scripts/init_db.sh) script will run and seed the database with an environment specific dump. Read about Postgres initialization scripts [here](https://github.com/docker-library/docs/blob/master/postgres/README.md#initialization-scripts). To see how to create this dump, look [here](https://github.com/DavidMagda/Code Sparks_fork_2023/blob/develop/scripts/readme.md).
 
-* `casmm-compile_queue-dev`
+* `code-sparks-compile_queue-dev`
 
 #### Running
 
-`casmm-client-dev`
+`code-sparks-client-dev`
 
 1. Follow the [client](/client#setup) setup
 2. Run `yarn start` from `/client`
 
-`casmm-server-dev`, `casmm-compile-dev`, `casmm-db-dev`, and `casmm-compile_queue-dev`
+`code-sparks-server-dev`, `code-sparks-compile-dev`, `code-sparks-db-dev`, and `code-sparks-compile_queue-dev`
 
 1. Install [docker](https://docs.docker.com/get-docker/)
 
@@ -67,13 +67,13 @@ The development environment is composed of five servers. The first one is run wi
 
 The staging environment is a Heroku app. It is composed of a web dyno, compile dyno, Heroku Postgres add-on, and Heroku Redis add-on.
 
-* `casmm-staging` - [casmm-staging.herokuapp.com](https://casmm-staging.herokuapp.com/)
+* `code-sparks-staging` - [code-sparks-staging.herokuapp.com](https://code-sparks-staging.herokuapp.com/)
   * The web dyno runs `server`
   * The compile dyno runs `compile`
 
 #### Running
 
-`casmm-staging` is automatically built from the latest commits to branches matching `release/v[0-9].[0-9]`. Heroku runs the container orchestration from there.
+`code-sparks-staging` is automatically built from the latest commits to branches matching `release/v[0-9].[0-9]`. Heroku runs the container orchestration from there.
 
 ### Production
 
@@ -81,13 +81,13 @@ The staging environment is a Heroku app. It is composed of a web dyno, compile d
 
 The production environment is a Heroku app. It is composed of a web dyno, compile dyno, Heroku Postgres add-on, and Heroku Redis add-on.
 
-* `casmm` - [www.casmm.org](https://www.casmm.org/)
+* `code-sparks` - [www.code-sparks.org](https://www.code-sparks.org/)
   * The web dyno runs `server`
   * The compile dyno runs `compile`
 
 #### Running
 
-`casmm` is automatically built from the latest commits to `master`. Heroku runs the container orchestration from there.
+`code-sparks` is automatically built from the latest commits to `master`. Heroku runs the container orchestration from there.
 
 <br/>
 
@@ -103,7 +103,7 @@ This is by far the largest and most important dependency we have. Staying up to 
 
 ## CI/CD
 
-All of the deployments and releases are handled automatically with [GitHub Actions](https://docs.github.com/en/actions). The workflows implement custom [Actions](https://github.com/STEM-C/CaSMM/actions) that live in the [auto](https://github.com/STEM-C/auto) repo.
+All of the deployments and releases are handled automatically with [GitHub Actions](https://docs.github.com/en/actions). The workflows implement custom [Actions](https://github.com/STEM-C/Code Sparks/actions) that live in the [auto](https://github.com/STEM-C/auto) repo.
 
 <br/>
 
@@ -140,3 +140,59 @@ Before submitting a pull request, rebase the feature branch into the target bran
 
 - PRs to **master** should squash and merge
 - PRs to all other branches should create a merge commit
+
+### Features
+
+We developed 7 features for this project:
+
+> Google Translate:
+- Description: This feature allows the user to change the language of the webpage to any of the 100+ languages that google translate offers. As the user navigates through the website, the chosen language stays the same. 
+![Google Translate](/../screenshots/1.png?raw=true)
+
+
+
+> Navbar:
+- Description: This feature allows users to easily navigate between pages in the website. It is also responsive since it is able to accommodate smaller screen sizes.
+![Navbar](/../screenshots/2.png?raw=true)
+
+
+> Landing Page
+- Description: This feature is the first thing that users will see as they arrive at the website. It accommodates all types of users and allows for them to directly sign in on the screen. It also has featured projects at the bottom of the screen. 
+![Landing Page](/../screenshots/3.png?raw=true)
+
+
+
+> State tracking - public sandbox: 
+- Description: For non-logged-in users, a public sandbox is available to experiment with. The state tracking system preserves their progress for 24 hours of inactivity. This allows users to return to their work if they revisit the site within this time frame.
+![public sandbox](/../screenshots/4-1.png?raw=true)
+![clean public sandbox](/../screenshots/4-2.png?raw=true)
+
+
+
+> State tracking - session storage:
+- Description: The website remembers the last page visited by a user. If a user accidentally closes the website, they are redirected back to their previous page upon reopening. For logged-in users, this redirection leads to the login page. Additionally, there is a 15-minute idle timeout. If non-logged-in users remain inactive for this period, they are redirected to the main page. Meanwhile, logged-in users are automatically signed out and taken to the login page after 15 minutes of inactivity.
+![about page](/../screenshots/5-1.png?raw=true)
+![login page](/../screenshots/5-2.png?raw=true)
+
+
+
+> System Mode: 
+- Description: Detects whether a user’s device is in light-mode or dark-mode and displays color themes on CodeSparks according to those settings. Feature includes a button that allows users to manually toggle between modes and set the website to their chosen theme.
+![light mode](/../screenshots/6-1.png?raw=true)
+![dark mode](/../screenshots/6-2.png?raw=true)
+  
+> UI Feedback: 
+- Description: Gives user interactive UI elements. UI elements such as buttons and logos provide visual feedback when hovered over with the mouse. This includes button text highlight and color change, as well as logo enlargement and home page rerouting.
+![hover-forgot password](/../screenshots/7-1.png?raw=true)
+![hover-home](/../screenshots/7-2.png?raw=true)
+
+### CodeBase
+This project iterated on the existing repository “Emerald Code Sparks” (link: https://github.com/UFWebApps2-0/emerald-code-sparks) to add features to the CASMM website (https://www.casmm.org/). The package manager for this project was Node.JS Version 10.2.0 and we used REACT Version 18.2.0 to add more features to the website’s navigation and accessibility. We used Docker Version 4.25.2 and Yarn Version 1.22.19.
+
+### External Libraries & APIs
+- Google Translate API: https://www.coderepublics.com/howto/how-to-google-translate.php 
+
+### Databases
+
+This project didn't utilize any additional databases.
+

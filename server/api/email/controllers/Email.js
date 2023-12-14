@@ -33,7 +33,7 @@ module.exports = {
 
     try {
       const emailOptions = {
-        to: 'casmm.help@gmail.com',
+        to: 'code-sparks.help@gmail.com',
         subject: 'Bug Report',
         html: `
         <h3>Description of the bug: </h3>
@@ -47,10 +47,10 @@ module.exports = {
         `,
       };
       await strapi.plugins['email'].services.email.send(emailOptions);
-      strapi.log.debug(`Email sent to casmm.help@gmail.com`);
+      strapi.log.debug(`Email sent to code-sparks.help@gmail.com`);
       ctx.send({ message: 'Email sent' });
     } catch (err) {
-      strapi.log.error(`Error sending email to casmm.help@gmail.com, `, err);
+      strapi.log.error(`Error sending email to code-sparks.help@gmail.com, `, err);
       ctx.send({ error: 'Error sending email' });
     }
   },

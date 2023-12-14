@@ -1,9 +1,7 @@
 import { message } from 'antd';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NavBar from '../../components/NavBar/NavBar';
 import { postUser, setUserSession } from '../../Utils/AuthRequests';
-import './TeacherLogin.less';
 
 const useFormInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
@@ -46,39 +44,38 @@ export default function TeacherLogin() {
   };
 
   return (
-    <div className='container nav-padding'>
-      <NavBar />
-      <div id='content-wrapper'>
-        <form
-          id='box'
-          onKeyPress={(e) => {
-            if (e.key === 'Enter') handleLogin();
-          }}
-        >
-          <div id='box-title'>User Login</div>
+      <div 
+        id='box'
+        onKeyUp={(e) => {
+          if (e.key === 'Enter') handleLogin();
+        }}
+      tabIndex="-1"
+      >
+         <h2 className='login-text'>PARENT / EDUCATOR</h2>
           <input
             type='email'
             {...email}
             placeholder='Email'
             autoComplete='username'
+            tabIndex="0"
           />
           <input
             type='password'
             {...password}
             placeholder='Password'
             autoComplete='current-password'
+            tabIndex="0"
           />
-          <p id='forgot-password' onClick={() => navigate('/forgot-password')}>
+          <p id='forgot-password' onClick={() => navigate('/forgot-password')} tabIndex="0">
             Forgot Password?
           </p>
           <input
             type='button'
-            value={loading ? 'Loading...' : 'Login'}
+            value={loading ? 'LOADING...' : 'LOGIN'}
             onClick={handleLogin}
             disabled={loading}
+            tabIndex="0"
           />
-        </form>
       </div>
-    </div>
   );
 }

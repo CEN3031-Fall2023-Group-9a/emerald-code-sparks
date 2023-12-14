@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import BlocklyCanvasPanel from "../../components/ActivityPanels/BlocklyCanvasPanel/BlocklyCanvasPanel"
 import NavBar from "../../components/NavBar/NavBar"
+import PropTypes from 'prop-types';
+
 import {
   getAuthorizedWorkspaceToolbox,
   getActivityToolbox,
@@ -10,7 +12,7 @@ import {
 } from "../../Utils/requests"
 import { useGlobalState } from "../../Utils/userState"
 
-export default function BlocklyPage({ isSandbox }) {
+function BlocklyPage({ isSandbox, isDarkMode }) {
   const [value] = useGlobalState("currUser")
   const [activity, setActivity] = useState({})
   const navigate = useNavigate()
@@ -72,12 +74,20 @@ export default function BlocklyPage({ isSandbox }) {
     setup()
   }, [isSandbox, navigate, value.role])
 
-  return (
-    <div className="container nav-padding">
-      <NavBar />
+return (
+      // change between light and dark css/less depending on state
+    <div className={isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'} >
+        <NavBar isDarkMode ={isDarkMode}/>
       <div className="flex flex-row">
         <BlocklyCanvasPanel activity={activity} setActivity={setActivity} isSandbox={isSandbox} />
       </div>
     </div>
   )
 }
+
+BlocklyPage.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+
+export default BlocklyPage;

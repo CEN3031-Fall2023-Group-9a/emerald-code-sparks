@@ -14,8 +14,8 @@ module.exports = () => ({
       },
     },
     settings: {
-      defaultFrom: 'no-reply@casmm.org',
-      defaultReplyTo: 'no-reply@casmm.org',
+      defaultFrom: 'no-reply@code-sparks.org',
+      defaultReplyTo: 'no-reply@code-sparks.org',
     },
   },
   sentry: {

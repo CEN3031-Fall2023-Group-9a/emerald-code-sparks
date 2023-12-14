@@ -13,6 +13,11 @@
   min-width: 100vw;
   text-align: center;
 }
+#form-container-dark {
+  background-color: #colors[primary-dark];
+  min-width: 100vw;
+  text-align: center;
+}
 
 #wrapper {
   margin: 4vh auto 1vh;
@@ -30,6 +35,8 @@
 
 #box {
   width: 300px;
+  height: auto;
+  min-height: 300px;
   padding: 40px 20px;
   background-color: #colors[tertiary];
   text-align: center;
@@ -62,30 +69,6 @@
   width: 220px;
 }
 
-#box input[type='button'] {
-  background: darken(#colors[tertiary], 30%);
-  width: 80%;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid;
-  border-color: #colors[secondary];
-  padding: 14px 40px;
-  outline: none;
-  color: #colors[text-secondary];
-  font-size: 1.5em;
-  font-weight: 550;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.25s;
-
-  &:hover {
-    color: lighten(#colors[secondary], 20%);
-  }
-
-  position: relative;
-  bottom: -65px;
-}
-
 #login-logo {
   width: 250px;
   height: auto;
@@ -96,6 +79,16 @@
 #link-container {
   background-color: #colors[primary];
   color: #colors[text-secondary];
+  font-size: 1.4em;
+  text-decoration: underline;
+  text-align: center;
+  position: relative;
+  margin: auto;
+}
+
+#link-container-dark {
+  background-color: #colors[primary-dark];
+  color: #colors[text-secondary-dark];
   font-size: 1.4em;
   text-decoration: underline;
   text-align: center;
@@ -138,7 +131,7 @@
   transition: 0.25s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.377);
 
-  &:hover {
+  &:hover, &:focus {
     width: 21%;
     background: #colors[quinary];
   }
@@ -157,6 +150,10 @@
   border: 4px solid;
   border-color: #colors[secondary];
   background-color: #ffccc7 !important;
+}
+
+.join-button {
+  bottom: -30px !important;
 }
 
 #box-auth-fail select {

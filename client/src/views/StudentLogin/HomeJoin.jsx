@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
-import './Home.less';
 import { getStudents } from '../../Utils/requests';
 
 export default function HomeJoin(props) {
@@ -26,21 +25,26 @@ export default function HomeJoin(props) {
   return (
     <div
       id='box'
-      onKeyPress={(e) => {
+      onKeyUp={(e) => {
         if (e.key === 'Enter') handleLogin();
       }}
+      tabIndex="-1"
     >
+      <h2 className='login-text'>STUDENT</h2>
       <input
         type='text'
         value={joinCode}
         placeholder='Join Code'
         onChange={(e) => setJoinCode(e.target.value)}
+        tabIndex="0"
       />
       <input
-        type='button'
-        value={loading ? 'Loading...' : 'Join'}
+        type='button' 
+        className='join-button'
+        value={loading ? 'LOADING...' : 'JOIN'}
         onClick={handleLogin}
         disabled={loading}
+        tabIndex="0"
       />
     </div>
   );

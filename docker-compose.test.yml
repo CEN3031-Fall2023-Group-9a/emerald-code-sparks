@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    container_name: casmm-server-test
+    container_name: code-sparks-server-test
     image: strapi/strapi
     restart: always
     environment: 
@@ -15,13 +15,13 @@ services:
       - db
       - compile_queue
   compile:
-    container_name: casmm-compile-test
+    container_name: code-sparks-compile-test
     build: ./compile
     restart: always
     depends_on:
       - compile_queue
   db:
-    container_name: casmm-db-test
+    container_name: code-sparks-db-test
     image: postgres
     restart: always
     ports:
@@ -37,6 +37,6 @@ services:
       DATABASE_URL: strapi
       SCRIPT_PATH: /docker-entrypoint-initdb.d
   compile_queue:
-    container_name: casmm-compile_queue-test
+    container_name: code-sparks-compile_queue-test
     image: redis
     restart: always
