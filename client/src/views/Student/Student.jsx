@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import { getStudentClassroom } from '../../Utils/requests';
+import PropTypes from 'prop-types';
+
 import './Student.less';
 
-function Student() {
+function Student(props) {
   const [learningStandard, setLessonModule] = useState({});
   const navigate = useNavigate();
 
@@ -41,8 +43,8 @@ function Student() {
   };
 
   return (
-    <div className='container nav-padding'>
-      <NavBar />
+    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
+    <NavBar isDarkMode ={props.isDarkMode}/>
       <div id='activity-container' tabIndex="0" >
         <div id='header' tabindex="-1">
           <div tabindex="-1">Select your Activity</div>
@@ -73,6 +75,10 @@ function Student() {
       </div>
     </div>
   );
+}
+
+Student.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
 }
 
 export default Student;

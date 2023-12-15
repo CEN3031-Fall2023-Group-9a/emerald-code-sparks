@@ -168,7 +168,7 @@ const App = () => {
           path='/student'
           element={
             <PrivateRoute>
-              <Student />
+              <Student isDarkMode={isDarkMode}/>
             </PrivateRoute>
           }
         />
@@ -200,11 +200,11 @@ const App = () => {
           path='/ccdashboard'
           element={
             <PrivateRoute>
-              <ContentCreator />
+              <ContentCreator isDarkMode={isDarkMode}/>
             </PrivateRoute>
           }
         />
-        <Route path='/bugreport' element={<BugReport />} />
+        <Route path='/bugreport' element={<BugReport isDarkMode={isDarkMode}/>} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
 

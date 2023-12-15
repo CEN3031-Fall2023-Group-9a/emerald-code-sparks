@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import { Tabs, Table, Popconfirm, message } from 'antd';
-import Navbar from '../../components/NavBar/NavBar';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import SavedWorkSpaceTab from '../../components/Tabs/SavedWorkspaceTab';
 import UnitCreator from './UnitCreator/UnitCreator';
@@ -14,12 +13,12 @@ import {
 import UnitEditor from './UnitEditor/UnitEditor';
 import LessonEditor from './LessonEditor/LessonEditor';
 import { useSearchParams } from 'react-router-dom';
-
+import NavBar from "../../components/NavBar/NavBar";
+import PropTypes from 'prop-types';
 import './ContentCreator.less';
 
 const { TabPane } = Tabs;
-
-export default function ContentCreator() {
+function ContentCreator(props) {
   const [gradeList, setGradeList] = useState([]);
   const [learningStandardList, setLessonModuleList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -151,8 +150,8 @@ export default function ContentCreator() {
   };
 
   return (
-    <div className='container nav-padding'>
-      <Navbar />
+    <div className={props.isDarkMode ? 'container-dark nav-padding' : 'container nav-padding'}>
+	<NavBar isDarkMode ={props.isDarkMode}/>
       <div id='main-header'>Welcome Content Creator</div>
 
       <Tabs
@@ -208,3 +207,9 @@ export default function ContentCreator() {
     </div>
   );
 }
+
+ContentCreator.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired
+}
+
+export default ContentCreator;
